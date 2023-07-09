@@ -1,0 +1,29 @@
+{
+  "buildFiles": [
+    "D:\\project\\android\\weike\\test_package\\app\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "F:\\sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "D:\\project\\android\\weike\\test_package\\app\\.cxx\\Debug\\6ew5z5d2\\x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "F:\\sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "D:\\project\\android\\weike\\test_package\\app\\.cxx\\Debug\\6ew5z5d2\\x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "native-lib::@6890427a1f51a3e7e1df": {
+      "artifactName": "native-lib",
+      "abi": "x86_64",
+      "output": "D:\\project\\android\\weike\\test_package\\app\\build\\intermediates\\cxx\\Debug\\6ew5z5d2\\obj\\x86_64\\libnative-lib.so",
+      "runtimeFiles": [
+        "F:\\sdk\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\x86_64-linux-android\\28\\liblog.so"
+      ]
+    }
+  }
+}

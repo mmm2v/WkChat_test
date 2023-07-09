@@ -1,0 +1,19 @@
+                        -HD:\project\android\weike\test_package\app
+-DCMAKE_SYSTEM_NAME=Android
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_SYSTEM_VERSION=28
+-DANDROID_PLATFORM=android-28
+-DANDROID_ABI=x86_64
+-DCMAKE_ANDROID_ARCH_ABI=x86_64
+-DANDROID_NDK=F:\sdk\ndk-bundle
+-DCMAKE_ANDROID_NDK=F:\sdk\ndk-bundle
+-DCMAKE_TOOLCHAIN_FILE=F:\sdk\ndk-bundle\build\cmake\android.toolchain.cmake
+-DCMAKE_MAKE_PROGRAM=F:\sdk\cmake\3.22.1\bin\ninja.exe
+-DCMAKE_CXX_FLAGS=-std=c++14
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=D:\project\android\weike\test_package\app\build\intermediates\cxx\Debug\6ew5z5d2\obj\x86_64
+-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=D:\project\android\weike\test_package\app\build\intermediates\cxx\Debug\6ew5z5d2\obj\x86_64
+-DCMAKE_BUILD_TYPE=Debug
+-BD:\project\android\weike\test_package\app\.cxx\Debug\6ew5z5d2\x86_64
+-GNinja
+                        Build command args: []
+                        Version: 2

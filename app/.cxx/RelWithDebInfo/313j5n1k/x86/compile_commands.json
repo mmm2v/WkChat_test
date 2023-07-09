@@ -1,0 +1,47 @@
+[
+{
+  "directory": "D:/project/android/weike/test_package/app/.cxx/RelWithDebInfo/313j5n1k/x86",
+  "command": "F:\\sdk\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android28 --gcc-toolchain=F:/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=F:/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS -ID:/project/android/weike/test_package/app/src/main/cpp/include -ID:/project/android/weike/test_package/app/src/main/jni -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c++14 -O2 -g -DNDEBUG -fPIC -o CMakeFiles\\native-lib.dir\\src\\main\\jni\\native-main.cpp.o -c D:\\project\\android\\weike\\test_package\\app\\src\\main\\jni\\native-main.cpp",
+  "file": "D:\\project\\android\\weike\\test_package\\app\\src\\main\\jni\\native-main.cpp"
+},
+{
+  "directory": "D:/project/android/weike/test_package/app/.cxx/RelWithDebInfo/313j5n1k/x86",
+  "command": "F:\\sdk\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=i686-none-linux-android28 --gcc-toolchain=F:/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=F:/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS -ID:/project/android/weike/test_package/app/src/main/cpp/include -ID:/project/android/weike/test_package/app/src/main/jni -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O2 -g -DNDEBUG -fPIC -o CMakeFiles\\native-lib.dir\\src\\main\\jni\\assistant\\myTimer.c.o -c D:\\project\\android\\weike\\test_package\\app\\src\\main\\jni\\assistant\\myTimer.c",
+  "file": "D:\\project\\android\\weike\\test_package\\app\\src\\main\\jni\\assistant\\myTimer.c"
+},
+{
+  "directory": "D:/project/android/weike/test_package/app/.cxx/RelWithDebInfo/313j5n1k/x86",
+  "command": "F:\\sdk\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android28 --gcc-toolchain=F:/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=F:/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS -ID:/project/android/weike/test_package/app/src/main/cpp/include -ID:/project/android/weike/test_package/app/src/main/jni -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c++14 -O2 -g -DNDEBUG -fPIC -o CMakeFiles\\native-lib.dir\\src\\main\\jni\\assistant\\assistant.cpp.o -c D:\\project\\android\\weike\\test_package\\app\\src\\main\\jni\\assistant\\assistant.cpp",
+  "file": "D:\\project\\android\\weike\\test_package\\app\\src\\main\\jni\\assistant\\assistant.cpp"
+},
+{
+  "directory": "D:/project/android/weike/test_package/app/.cxx/RelWithDebInfo/313j5n1k/x86",
+  "command": "F:\\sdk\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android28 --gcc-toolchain=F:/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=F:/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS -ID:/project/android/weike/test_package/app/src/main/cpp/include -ID:/project/android/weike/test_package/app/src/main/jni -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c++14 -O2 -g -DNDEBUG -fPIC -o CMakeFiles\\native-lib.dir\\src\\main\\jni\\assistant\\timerProc.cpp.o -c D:\\project\\android\\weike\\test_package\\app\\src\\main\\jni\\assistant\\timerProc.cpp",
+  "file": "D:\\project\\android\\weike\\test_package\\app\\src\\main\\jni\\assistant\\timerProc.cpp"
+},
+{
+  "directory": "D:/project/android/weike/test_package/app/.cxx/RelWithDebInfo/313j5n1k/x86",
+  "command": "F:\\sdk\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android28 --gcc-toolchain=F:/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=F:/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS -ID:/project/android/weike/test_package/app/src/main/cpp/include -ID:/project/android/weike/test_package/app/src/main/jni -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c++14 -O2 -g -DNDEBUG -fPIC -o CMakeFiles\\native-lib.dir\\src\\main\\jni\\cs\\addressbookpro.cpp.o -c D:\\project\\android\\weike\\test_package\\app\\src\\main\\jni\\cs\\addressbookpro.cpp",
+  "file": "D:\\project\\android\\weike\\test_package\\app\\src\\main\\jni\\cs\\addressbookpro.cpp"
+},
+{
+  "directory": "D:/project/android/weike/test_package/app/.cxx/RelWithDebInfo/313j5n1k/x86",
+  "command": "F:\\sdk\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android28 --gcc-toolchain=F:/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=F:/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS -ID:/project/android/weike/test_package/app/src/main/cpp/include -ID:/project/android/weike/test_package/app/src/main/jni -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c++14 -O2 -g -DNDEBUG -fPIC -o CMakeFiles\\native-lib.dir\\src\\main\\jni\\cs\\cs.cpp.o -c D:\\project\\android\\weike\\test_package\\app\\src\\main\\jni\\cs\\cs.cpp",
+  "file": "D:\\project\\android\\weike\\test_package\\app\\src\\main\\jni\\cs\\cs.cpp"
+},
+{
+  "directory": "D:/project/android/weike/test_package/app/.cxx/RelWithDebInfo/313j5n1k/x86",
+  "command": "F:\\sdk\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android28 --gcc-toolchain=F:/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=F:/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS -ID:/project/android/weike/test_package/app/src/main/cpp/include -ID:/project/android/weike/test_package/app/src/main/jni -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c++14 -O2 -g -DNDEBUG -fPIC -o CMakeFiles\\native-lib.dir\\src\\main\\jni\\cs\\promsg.cpp.o -c D:\\project\\android\\weike\\test_package\\app\\src\\main\\jni\\cs\\promsg.cpp",
+  "file": "D:\\project\\android\\weike\\test_package\\app\\src\\main\\jni\\cs\\promsg.cpp"
+},
+{
+  "directory": "D:/project/android/weike/test_package/app/.cxx/RelWithDebInfo/313j5n1k/x86",
+  "command": "F:\\sdk\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android28 --gcc-toolchain=F:/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=F:/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS -ID:/project/android/weike/test_package/app/src/main/cpp/include -ID:/project/android/weike/test_package/app/src/main/jni -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c++14 -O2 -g -DNDEBUG -fPIC -o CMakeFiles\\native-lib.dir\\src\\main\\jni\\cs\\regnot.cpp.o -c D:\\project\\android\\weike\\test_package\\app\\src\\main\\jni\\cs\\regnot.cpp",
+  "file": "D:\\project\\android\\weike\\test_package\\app\\src\\main\\jni\\cs\\regnot.cpp"
+},
+{
+  "directory": "D:/project/android/weike/test_package/app/.cxx/RelWithDebInfo/313j5n1k/x86",
+  "command": "F:\\sdk\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android28 --gcc-toolchain=F:/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=F:/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS -ID:/project/android/weike/test_package/app/src/main/cpp/include -ID:/project/android/weike/test_package/app/src/main/jni -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c++14 -O2 -g -DNDEBUG -fPIC -o CMakeFiles\\native-lib.dir\\src\\main\\jni\\cs\\sm.cpp.o -c D:\\project\\android\\weike\\test_package\\app\\src\\main\\jni\\cs\\sm.cpp",
+  "file": "D:\\project\\android\\weike\\test_package\\app\\src\\main\\jni\\cs\\sm.cpp"
+}
+]

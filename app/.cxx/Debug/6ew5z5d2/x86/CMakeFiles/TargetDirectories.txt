@@ -1,0 +1,3 @@
+D:/project/android/weike/test_package/app/.cxx/Debug/6ew5z5d2/x86/CMakeFiles/native-lib.dir
+D:/project/android/weike/test_package/app/.cxx/Debug/6ew5z5d2/x86/CMakeFiles/edit_cache.dir
+D:/project/android/weike/test_package/app/.cxx/Debug/6ew5z5d2/x86/CMakeFiles/rebuild_cache.dir

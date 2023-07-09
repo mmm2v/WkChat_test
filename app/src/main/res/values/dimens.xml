@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="item_height">60dp</dimen>
+    <dimen name="item_height2">80dp</dimen>
+    <dimen name="item_margin">10dp</dimen>
+    <dimen name="history_item_btn_width">0dp</dimen>
+    <dimen name="history_item_btn_height">0dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="collapsed_header_height">60dp</dimen>
+    <dimen name="collapsed_float_offset_y">-10dp</dimen>
+    <dimen name="collapsed_float_zero">0dp</dimen>
+    <dimen name="collapsed_search_margin_right">100dp</dimen>
+    <dimen name="collapsed_search_height">30dp</dimen>
+    <dimen name="collapsed_search_margin_left2right">20dp</dimen>
+</resources>

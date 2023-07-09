@@ -1,0 +1,15 @@
+# ninja log v5
+5	361	7095572337655529	CMakeFiles/native-lib.dir/src/main/jni/assistant/myTimer.c.o	7d3f67f714fa8ae7
+30	629	7095572339720326	CMakeFiles/native-lib.dir/src/main/jni/assistant/assistant.cpp.o	456ce163a3462bf
+24	898	7095572343022184	CMakeFiles/native-lib.dir/src/main/jni/assistant/timerProc.cpp.o	18f1720f7a7a9408
+101	945	7095572343830029	CMakeFiles/native-lib.dir/src/main/jni/cs/regnot.cpp.o	84ef8135fd1cfb63
+93	954	7095572343810086	CMakeFiles/native-lib.dir/src/main/jni/cs/addressbookpro.cpp.o	ee8b60d61275eb3a
+1	1116	7095572345655557	CMakeFiles/native-lib.dir/src/main/jni/native-main.cpp.o	7506c5b1961d0707
+87	1158	7095572346079585	CMakeFiles/native-lib.dir/src/main/jni/cs/cs.cpp.o	3795c268eca26b50
+362	1314	7095572347546113	CMakeFiles/native-lib.dir/src/main/jni/cs/sm.cpp.o	cefd53ff88d3a537
+97	1315	7095572347546113	CMakeFiles/native-lib.dir/src/main/jni/cs/promsg.cpp.o	81336f1c6d68a038
+1315	1419	7095572348668218	../../../../build/intermediates/cxx/RelWithDebInfo/313j5n1k/obj/x86_64/libnative-lib.so	302b225c40ed6bab
+3	838	7101634769907453	CMakeFiles/native-lib.dir/src/main/jni/cs/promsg.cpp.o	81336f1c6d68a038
+838	2514	7101634786634162	../../../../build/intermediates/cxx/RelWithDebInfo/313j5n1k/obj/x86_64/libnative-lib.so	302b225c40ed6bab
+1	10	0	clean	13b9f7c8846a94ec
+0	8	0	clean	13b9f7c8846a94ec
