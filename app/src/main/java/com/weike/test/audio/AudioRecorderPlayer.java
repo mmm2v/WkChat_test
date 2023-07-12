@@ -9,6 +9,8 @@ import android.media.audiofx.AcousticEchoCanceler;
 import android.media.audiofx.NoiseSuppressor;
 import android.util.Log;
 
+import java.util.Arrays;
+
 public class AudioRecorderPlayer {
     private static final String TAG = "AudioRecorderPlayer";
     private static final int SAMPLE_RATE = 8000;
@@ -49,6 +51,7 @@ public class AudioRecorderPlayer {
         byte[] buffer = new byte[BUFFER_SIZE];
         while (isRecording) {
             int bytesRead = audioRecord.read(buffer, 0, BUFFER_SIZE);
+            Log.d(TAG, "startRecordingAndPlaying: -----" + Arrays.toString(buffer));
             audioTrack.write(buffer, 0, bytesRead);
         }
 

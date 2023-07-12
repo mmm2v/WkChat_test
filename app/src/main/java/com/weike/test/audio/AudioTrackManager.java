@@ -8,21 +8,20 @@ import android.media.AudioTrack;
 import android.media.MediaRecorder;
 import android.util.Log;
 
-import com.weike.test.common.AudioConstants;
 import com.weike.test.utils.MyApplication;
-import com.weike.test.utils.ThreadUtils;
 
 import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.nio.file.Files;
 import java.util.Arrays;
-import java.util.Objects;
 
 public class AudioTrackManager {
     private final String TAG = "-----AudioTrack----";
     private AudioTrack mAudioTrack;
-    private AudioRecord mRecord;
     private DataInputStream mDis;//播放文件的数据流
     private Thread mRecordThread;
     private boolean isStart = false;
@@ -31,17 +30,32 @@ public class AudioTrackManager {
     //指定采样率
     private static final int mSampleRateInHz = 8000;
     //指定捕获音频的声道数目
-    private static final int mChannelConfig = AudioFormat.CHANNEL_OUT_STEREO;
+    private static final int mChannelConfig = AudioFormat.CHANNEL_OUT_MONO;
     //指定音频量化位数
     private static final int mAudioFormat = AudioFormat.ENCODING_PCM_16BIT;
 
-    private int bufferSizeInBytes;
+    private final int bufferSizeInBytes = 160;
+
+    private AudioRecord mAudioRecord;
+    private DataOutputStream mDataOutputStream;
+    private Thread mPlayThread;
+    private boolean isRecording = false;
+
+    private static final int PORT = 12345;
+
+    private static final int SAMPLE_RATE = 8000;
+    private static final int CHANNEL_CONFIG = AudioFormat.CHANNEL_IN_MONO;
+    private static final int AUDIO_FORMAT = AudioFormat.ENCODING_PCM_16BIT;
+
+    private ServerSocket mServerSocket;
+    private Socket mClientSocket;
+    private DataInputStream mInputStream;
+    private DataOutputStream mOutputStream;
 
     public AudioTrackManager() {
         initData();
     }
 
-    @SuppressLint("MissingPermission")
     private void initData() {
         AudioAttributes audioAttributes = new AudioAttributes.Builder()
                 .setUsage(AudioAttributes.USAGE_MEDIA)
@@ -54,16 +68,12 @@ public class AudioTrackManager {
                 .setChannelMask(mChannelConfig)
                 .build();
 
-        bufferSizeInBytes = AudioTrack.getMinBufferSize(mSampleRateInHz, mChannelConfig, mAudioFormat);
-
         Log.d(TAG, "----bufferSizeInBytes----: " + bufferSizeInBytes);
         mAudioTrack = new AudioTrack.Builder()
                 .setAudioAttributes(audioAttributes)
                 .setAudioFormat(audioFormat)
                 .setBufferSizeInBytes(bufferSizeInBytes)
                 .build();
-        mRecord = new AudioRecord(MediaRecorder.AudioSource.MIC, mSampleRateInHz, AudioFormat.CHANNEL_IN_MONO,
-                mAudioFormat, bufferSizeInBytes);
     }
 
     /**
@@ -158,44 +168,6 @@ public class AudioTrackManager {
         mDis = new DataInputStream(MyApplication.getAppContext().getResources().openRawResource(file));
     }
 
-    public void startRecording(){
-        // 开始录音
-        mRecord.startRecording();
-        // 读取缓存文件
-        ThreadUtils.getInstance().executeTask(new Runnable() {
-            @Override
-            public void run() {
-                String s = Objects.requireNonNull(FileUtil.getPrivateMusicStorageDir(MyApplication.getAppContext(), AudioConstants.RECORDS_DIR)).getAbsolutePath() + File.separator + "audio.wav";
-                Log.d(TAG, "filePath: ----" + s);
-                FileOutputStream outputStream = null;
-                try {
-                    outputStream = new FileOutputStream(s);
-
-                    byte[] buffer = new byte[bufferSizeInBytes];
-                    int bytesRead;
-                    while ((bytesRead = mRecord.read(buffer, 0, bufferSizeInBytes)) != -1) {
-                        outputStream.write(buffer, 0, bytesRead);
-                        Log.d(TAG, "buffer: ----" + Arrays.toString(buffer));
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } finally {
-                    if (outputStream != null) {
-                        try {
-                            outputStream.close();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-            }
-        });
-    }
-
-    public void stopRecording(){
-        mRecord.stop();
-    }
-
     /**
      * 启动播放
      *
@@ -207,9 +179,6 @@ public class AudioTrackManager {
             //AudioTrack未初始化
             if (mAudioTrack.getState() == AudioTrack.STATE_UNINITIALIZED) {
                 throw new RuntimeException("The AudioTrack is not uninitialized");
-            }//AudioRecord.getMinBufferSize的参数是否支持当前的硬件设备
-            else if (AudioTrack.ERROR_BAD_VALUE == bufferSizeInBytes || AudioTrack.ERROR == bufferSizeInBytes) {
-                throw new RuntimeException("AudioTrack Unable to getMinBufferSize");
             } else {
                 setPath(file);
                 startThread();
@@ -240,6 +209,63 @@ public class AudioTrackManager {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @SuppressLint("MissingPermission")
+    public void startRecording() {
+        Log.d(TAG, "--------startRecording: ");
+        if (isRecording) {
+            return;
+        }
+        isRecording = true;
+        try {
+            mAudioRecord = new AudioRecord(MediaRecorder.AudioSource.MIC, mSampleRateInHz, AudioFormat.CHANNEL_IN_MONO,
+                    mAudioFormat, bufferSizeInBytes);
+            Log.d(TAG, "---------mAudioRecord: " + mAudioRecord.getBufferSizeInFrames());
+            mDataOutputStream = new DataOutputStream(Files.newOutputStream(new File("record.txt").toPath()));
+            mAudioRecord.startRecording();
+            startRecordThread();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void stopRecording() {
+        isRecording = false;
+        try {
+            if (mAudioRecord != null) {
+                mAudioRecord.stop();
+                mAudioRecord.release();
+                mAudioRecord = null;
+            }
+            if (mDataOutputStream != null) {
+                mDataOutputStream.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void startRecordThread() {
+        Log.d(TAG, "--------startRecordThread: ");
+        mPlayThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                byte[] buffer = new byte[bufferSizeInBytes];
+                while (isRecording) {
+                    int readSize = mAudioRecord.read(buffer, 0, bufferSizeInBytes);
+                    if (readSize > 0) {
+                        try {
+                            Log.d(TAG, "start: ----" + Arrays.toString(buffer));
+                            mDataOutputStream.write(buffer, 0, readSize);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+        });
+        mPlayThread.start();
     }
 
 }

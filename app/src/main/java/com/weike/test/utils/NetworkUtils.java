@@ -7,7 +7,8 @@ import java.util.Enumeration;
 import java.util.List;
 
 public class NetworkUtils {
-    public static String getIPAddress() {
+    public static ArrayList<String> getIPAddress() {
+        ArrayList<String> adds = new ArrayList<>();
         try {
             Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
             while (interfaces.hasMoreElements()) {
@@ -16,14 +17,14 @@ public class NetworkUtils {
                 while (addresses.hasMoreElements()) {
                     InetAddress address = addresses.nextElement();
                     if (!address.isLoopbackAddress() && !address.isLinkLocalAddress() && address.isSiteLocalAddress()) {
-                        return address.getHostAddress();
+                        adds.add(address.getHostAddress());
                     }
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
+        return adds;
     }
     public static int ip2Int(String ipString) {
         // 取 ip 的各段

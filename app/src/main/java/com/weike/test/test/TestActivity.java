@@ -16,6 +16,9 @@ import com.weike.test.R;
 import com.weike.test.utils.NetworkUtils;
 import com.weike.test.utils.PermissionRequestUtil;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RequiresApi(api = Build.VERSION_CODES.S)
 public class TestActivity extends AppCompatActivity {
 
@@ -79,8 +82,10 @@ public class TestActivity extends AppCompatActivity {
         btn10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String ip = NetworkUtils.getIPAddress();
-                Toast.makeText(context, "ip:" + ip, Toast.LENGTH_SHORT).show();
+                ArrayList<String> ipAddress = NetworkUtils.getIPAddress();
+                Intent intent = new Intent(context, IpsTestActivity.class);
+                intent.putStringArrayListExtra("ips", ipAddress);
+                startActivity(intent);
             }
         });
 
