@@ -24,12 +24,13 @@ public class TestActivity extends AppCompatActivity {
 
     private String TAG = "test";
 
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
-        Context context = this;
+        context = this;
         String[] PERMISSIONS = {
                 Manifest.permission.BLUETOOTH,
                 Manifest.permission.BLUETOOTH_ADMIN,
@@ -82,10 +83,12 @@ public class TestActivity extends AppCompatActivity {
         btn10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //可获取ip地址------------start------
                 ArrayList<String> ipAddress = NetworkUtils.getIPAddress();
                 Intent intent = new Intent(context, IpsTestActivity.class);
                 intent.putStringArrayListExtra("ips", ipAddress);
                 startActivity(intent);
+                //可获取ip地址------------end------
             }
         });
 
